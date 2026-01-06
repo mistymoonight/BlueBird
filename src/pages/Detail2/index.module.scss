@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.detail1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #ffffff;
+  padding: 52px 58px 49px 68px;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  .text6 {
+      line-height: 55px;
+      letter-spacing: 0.4px;
+      color: #000000;
+      font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      font-weight: bold; /* Bold */
+    }
+
+  .autoWrapper {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: space-between;
+    padding-right: 0;
+    padding-left: 0;
+
+    .group2968 {
+      position: relative;
+      width: 120px; /* Increased width to fit icon and text */
+      height: 35px; /* Increased height */
+      display: flex;
+      align-items: center;
+      background: #6f6f6fb5; /* Match HomePage pill style */
+      border-radius: 20px;
+      padding: 0 10px;
+      opacity: 1; /* Removed opacity: 0.19 from rectangle */
+      cursor: pointer;
+
+      .rectangle401 {
+        display: none; /* Hide the original CSS rectangle */
+      }
+
+      .miniBird {
+          width: 24px;
+          height: 24px;
+          margin-right: 8px;
+          border-radius: 50%;
+      }
+
+      .bluebird {
+        position: static; /* Reset absolute positioning */
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        color: #57c5e2;
+        font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+        font-size: 14px; /* Increased size */
+        font-weight: bold;
+        margin: 0;
+      }
+
+      .group2974 {
+        display: none; /* Hide old CSS bird */
+      }
+    }
+
+    .group2967 {
+      position: relative;
+      width: 648px;
+      height: 53px;
+      margin-top: 10px; /* Adjust vertical alignment to match Gallery header */
+
+      .rectangle378 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0.31;
+        border-radius: 15px;
+        background: #0f1315;
+        width: 648px;
+        height: 53px;
+      }
+
+      .find {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 648px;
+        height: 53px;
+
+        .rectangle3782 {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0.62;
+          border-radius: 15px;
+          box-shadow: 0px 37px 14px 0px #5ed4ff05, 0px 20px 13px 0px #5ed4ff14,
+            0px 9px 9px 0px #5ed4ff21, 0px 3px 5px 0px #5ed4ff26;
+          width: 648px;
+          height: 53px;
+          background-image: linear-gradient(
+            264.96deg,
+            #c7f0ff66 10.7%,
+            #5ed4ff66 60.35%,
+            #c7f0ff66 102.91%
+          );
+          backdrop-filter: blur(5px);
+        }
+
+        .rectangle379 {
+          display: none;
+        }
+
+        .frame2860 {
+          display: inline-flex;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: space-around; /* Distribute items evenly */
+          padding: 0 20px;
+
+          .text {
+            flex-shrink: 0;
+            line-height: 20px;
+            letter-spacing: 0.48px;
+            color: #ffffff;
+            font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+          }
+
+          .text2 {
+            flex-shrink: 0;
+            line-height: 20px;
+            letter-spacing: 0.48px;
+            color: #ffffff; /* Default white */
+            font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+          }
+          
+          /* Active state styling */
+          .activeTab {
+             background-color: #020202;
+             opacity: 0.55;
+             border-radius: 8px;
+             box-shadow: 0px 2px 5px 0px #007bd74d, 0px 3px 10px 0px #007bd766, 0px 8px 20px 0px #007bd766;
+             background-image: linear-gradient(180deg, #007bd700 0%, #007bd733 100%);
+             padding: 10px 20px;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+
+             .text2 {
+                padding: 0; /* Reset padding for inner text */
+             }
+          }
+        }
+      }
+    }
+  }
+
+  .autoWrapper2 {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    margin-top: 20px;
+    padding-right: 98px;
+    padding-left: 74px;
+    position: relative; /* Add relative positioning */
+
+    .d2 {
+      display: flex;
+      align-items: center;
+      padding-right: 1px;
+      cursor: pointer;
+      position: absolute; /* Position absolute to left */
+      left: 74px;
+
+      .vector {
+        /* No transform needed for manually drawn SVG if coordinates are correct */
+        /* If arrow points right in SVG, keep rotate: -180deg or scaleX(-1) */
+        /* Current path d="M10 17L2 9L10 1M2 9L20 9" points LEFT */
+        width: 21px;
+        height: 18px;
+        /* rotate: -180deg; Removed rotation as SVG path is drawn pointing left */
+      }
+
+      .back {
+        margin: 0px 0px 0px 14px;
+        line-height: 55px;
+        letter-spacing: 0.48px;
+        color: #57c5e2;
+        font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+        font-size: 24px;
+        font-weight: bold; /* Bold */
+      }
+    }
+
+    .text3 {
+      margin: 0 auto; /* Center horizontally */
+      line-height: 55px;
+      letter-spacing: 0.96px;
+      color: #000000;
+      font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 48px;
+      font-weight: bold; /* Bold to match Gallery title */
+      text-align: center; /* Ensure text is centered */
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: absolute; /* Position absolute to right */
+      right: 98px;
+      width: 151px;
+      min-width: 151px;
+      height: 55px;
+      font-weight: bold; 
+
+      .vector2 {
+        width: 20px;
+        height: 20px;
+      }
+
+      .text4 {
+        line-height: 55px;
+        letter-spacing: 0.4px;
+        color: #57c5e2;
+        font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .frame28531 {
+    display: inline-flex;
+    align-items: center;
+    align-self: stretch;
+    column-gap: 4px;
+    margin: 46px auto 0;
+    flex-wrap: wrap; /* Added flex-wrap for better responsiveness */
+    justify-content: center;
+
+    .text5 {
+      line-height: 20px;
+      letter-spacing: 0.28px;
+      color: #ffffff;
+      font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: bold; /* Bold to match Gallery tags */
+    }
+
+    .rectangle401 {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      border-radius: 20px;
+      background: #57c5e2;
+      padding: 4px 17px;
+      margin-bottom: 5px;
+      height: 28px; /* Force height to match Figma */
+    }
+  }
+
+  .autoWrapper3 {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: space-between;
+    margin-top: 33px;
+    padding-right: 91px;
+    padding-left: 61px;
+  }
+
+  .autoWrapper4 {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+    justify-content: space-between;
+    padding-right: 11px;
+    padding-left: 61px;
+
+    .text7 {
+      margin: 14px 0px 0px;
+      width: 80%; /* Adjusted width */
+      line-height: 28px;
+      letter-spacing: 0.28px;
+      color: #000000;
+      font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .image68 {
+      width: 211px;
+      height: 211px;
+    }
+  }
+
+  .autoWrapper5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    margin-top: 70px;
+    position: relative;
+
+    .titleWrapper {
+      position: absolute;
+      left: 61px;
+      top: 0;
+    }
+
+    .rectangle404 {
+      margin-top: 60px;
+      background: #d9d9d9;
+      width: 726px;
+      height: 436px;
+    }
+  }
+
+  .autoWrapper8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    margin-top: 50px;
+    padding-top: 0;
+    position: relative;
+
+    .autoWrapper6 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      align-self: stretch;
+      position: absolute;
+      left: 58px;
+      top: 0;
+
+      .text8 {
+        margin: 0px 0px 0px 4px;
+        line-height: 55px;
+        letter-spacing: 0.4px;
+        color: #000000;
+        font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    .vector3 {
+      width: 44px;
+      height: 75px;
+      rotate: -180deg;
+      margin-right: 360px;
+      margin-bottom: 100px;
+      cursor: pointer;
+    }
+
+    .autoWrapper7 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+      .a15 {
+        font-family: "Alimama FangYuanTi VF", "PingFang SC", sans-serif;
+        font-size: 18px;
+        color: #000000;
+        margin-top: 35px;
+        font-weight: bold;
+      }
+
+      .h1 {
+        width: 500px;
+        height: auto;
+        border-radius: 8px; /* Optional styling */
+      }
+    }
+
+    .vector4 {
+      width: 44px;
+      height: 75px;
+      margin-left: 360px;
+      margin-bottom: 100px;
+      cursor: pointer;
+    }
+  }
+
+  .autoWrapperSmallCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    margin-top: 50px;
+    position: relative;
+    
+    .titleWrapper {
+      position: absolute;
+      left: 61px;
+      top: 0;
+      
+      .text8 {
+        margin: 0px 0px 0px 4px;
+        line-height: 55px;
+        letter-spacing: 0.4px;
+        color: #000000;
+        font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    .imageWrapper {
+      margin-top: 55px; /* Adjust to clear the title */
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      
+      .smallCard {
+        width: 551px;
+        height: 337px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .autoWrapper9 {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+    margin-top: 92px;
+    padding-right: 187px;
+    padding-left: 61px;
+
+    .text9 {
+      margin: 35px 0px 0px 36px;
+      width: 968px;
+      line-height: 28px;
+      letter-spacing: 0.28px;
+      color: #000000;
+      font-family: "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+  }
+}

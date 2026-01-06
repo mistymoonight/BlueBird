@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.competition {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #ffffff;
+    width: 100%;
+    /* min-height: 100vh; Removed to eliminate white gap at bottom */
+    overflow: hidden;
+    position: relative;
+    padding-top: 50px; 
+    scroll-snap-align: start;
+    flex-shrink: 0;
+
+  .text3 {
+    margin: 49px 0px 0px 308px;
+    line-height: 20px;
+    letter-spacing: 0.96px;
+    color: #000000;
+    font-family: "Alimama FangYuanTi VF", "PingFang SC", sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+  }
+
+  .autoWrapper6 {
+    display: flex;
+    align-items: flex-start;
+    align-self: stretch;
+    justify-content: flex-start;
+    margin-top: 49px;
+    padding-left: 65px;
+    overflow-x: hidden;
+    padding-bottom: 50px; 
+    
+    .group2957 {
+      display: flex;
+      align-items: center;
+      margin-top: 230px; 
+      padding-right: 20px; 
+      flex-shrink: 0;
+      z-index: 10;
+      background: #fff;
+      cursor: pointer;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.7;
+      }
+
+      .vector {
+        margin-left: -1px;
+        width: 21px;
+        height: 18px;
+      }
+
+      .a5 {
+        display: flex;
+        align-items: center;
+        margin: 0px 0px 0px 14px;
+        width: 154px;
+        height: 34px;
+        line-height: 20px;
+        letter-spacing: 0.32px;
+        color: #000000;
+        font-family: "Alimama FangYuanTi VF", sans-serif;
+        font-size: 16px;
+      }
+    }
+
+    .ship {
+        display: flex;
+        gap: 40px;
+        padding-right: 100px;
+        flex-wrap: nowrap;
+        
+        /* Scroll container properties */
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        /* scroll-behavior: smooth;  Removed to handle JS scrolling */
+        flex: 1;
+        
+        /* Hide scrollbar */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        
+        cursor: grab;
+        &:active {
+            cursor: grabbing;
+        }
+    }
+
+    /* Standard Card Styles */
+    .card {
+      position: relative;
+      width: 825px;
+      height: 485px;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      scroll-margin-left: 0px; 
+
+      /* Horizontal certificate override for g2 - Moved to root class .g2 */
+
+
+      .cardBg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000000;
+        border-radius: 30px;
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .contentWrapper {
+        position: relative;
+        z-index: 4;
+        padding: 65px 0 0 80px;
+      }
+
+      .roleText {
+         line-height: 20px;
+         letter-spacing: 0.24px;
+         color: #ffffff;
+         font-family: "Alimama FangYuanTi VF", sans-serif;
+         font-size: 12px;
+         opacity: 0.7;
+         margin-bottom: 30px;
+         white-space: pre-wrap;
+      }
+
+      .mainTitleGroup {
+          margin-bottom: 20px;
+      }
+
+      .title {
+        color: #ffffff;
+        font-family: "Alimama FangYuanTi VF", sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1.2;
+        letter-spacing: 0.64px;
+        margin: 0;
+        margin-bottom: 10px;
+        max-width: 450px;
+      }
+
+      .award {
+        color: #57c5e2;
+        font-family: "Alimama FangYuanTi VF", sans-serif;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .dotsContainer {
+           position: absolute;
+           top: 60px;
+           left: 450px;
+           opacity: 0.5;
+           z-index: 2;
+      }
+
+      .dotsGrid {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+      }
+
+      .dotsRow {
+         display: flex;
+         gap: 20px;
+         
+         .dot {
+            width: 3px;
+            height: 3px;
+            background: #fff;
+            border-radius: 50%;
+         }
+      }
+
+      /* Decorations */
+      .decoration {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 166px;
+        pointer-events: none;
+        z-index: 3;
+        transform: rotate(180deg);
+      }
+      
+      /* Specific decoration adjustments if needed */
+      .decG1 {}
+      .decG2 {}
+      .decG3 {}
+      .decG4 {}
+      .decCommon {}
+
+      .detailsBtn {
+        display: flex;
+        position: absolute;
+        bottom: 37px;
+        left: 81px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 29px;
+        background: #ffffff;
+        padding: 5px 46px;
+        width: 157px;
+        height: 29px;
+        z-index: 5;
+        cursor: pointer;
+        transition: transform 0.2s;
+
+        p {
+          text-align: center;
+          line-height: 20px;
+          letter-spacing: 0.32px;
+          color: #57c5e2;
+          font-family: "Alimama FangYuanTi VF", sans-serif;
+          font-size: 16px;
+          font-weight: bold;
+          margin: 0;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+      }
+
+      .description {
+        position: absolute;
+        top: 250px;
+        left: 81px;
+        width: 372px;
+        height: 60px;
+        line-height: 20px;
+        letter-spacing: 0.24px;
+        color: #ffffff;
+        font-family: "Alimama FangYuanTi VF", sans-serif;
+        font-size: 12px;
+        z-index: 5;
+        
+        /* Truncate if too long */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      
+      .verticalLine {
+        position: absolute;
+        top: 67px;
+        left: 57px;
+        border-radius: 2px;
+        background: #ffffff;
+        width: 1px;
+        height: 40px; 
+        z-index: 5;
+      }
+
+      .certificate {
+        position: absolute;
+        top: 66px;
+        left: 534px; 
+        width: 250px;
+        height: 353px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: drop-shadow(0px 12px 14px #0000004a);
+        z-index: 10;
+        border-radius: 4px;
+        background-color: #fff;
+        animation: glow 3s infinite ease-in-out;
+      }
+    }
+  }
+
+  /* Glow animation for certificates */
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 15px rgba(87, 197, 226, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 35px rgba(87, 197, 226, 0.9), 0 0 65px rgba(87, 197, 226, 0.7);
+    }
+    100% {
+      box-shadow: 0 0 15px rgba(87, 197, 226, 0.4);
+    }
+  }
+
+  .footer {
+    margin-top: 89px;
+    background: #0a0a0a;
+    width: 100%;
+    height: 49px;
+    flex-shrink: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  /* Animation classes for cards */
+  .g1, .g2, .g3, .g4, .g5, .g6 {
+      opacity: 0;
+      animation: fadeInCard 0.8s ease-out forwards;
+  }
+
+  .g1 { animation-delay: 2s; }
+  
+  /* Ensure this selector has higher specificity */
+  .card.g2 { 
+      animation-delay: 2.6s; 
+      
+      .certificate {
+          top: 132px;
+          left: 460px;
+          width: 342px;
+          height: 247px;
+      }
+  }
+  
+  .g3 { animation-delay: 3.0s; }
+}
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

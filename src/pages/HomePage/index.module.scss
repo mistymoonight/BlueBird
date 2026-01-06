@@ -1,0 +1,400 @@
+* {
+  box-sizing: border-box;
+}
+
+.homepage {
+  position: relative;
+  background: #0a0a0a;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+
+  .decorate {
+    position: absolute;
+    top: 267px;
+    left: 641px;
+    width: 760px;
+    height: 170px;
+    z-index: 1;
+  }
+
+  .fenwei {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 810px;
+    min-height: 810px;
+    overflow: visible; /* Changed from hidden to visible to show 'early bird' text */
+    padding-top: 0;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    z-index: 2; /* Ensure it stays above competition if overlapping */
+    margin-bottom: 150px; /* Add space for the hanging text */
+
+    .ellipse87 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.66;
+      border-radius: 50%;
+      background: #2d5361;
+      width: 261px;
+      height: 261px;
+      filter: blur(127px);
+    }
+
+    .autoWrapper2 {
+      display: flex;
+      align-items: flex-start;
+      align-self: stretch;
+      justify-content: space-between;
+      /* Fixed position settings */
+      position: fixed;
+      top: 30px; /* Preserve the original visual top gap */
+      left: 0;
+      right: 0;
+      z-index: 1000; /* Ensure it stays on top */
+      padding-right: 50px;
+      padding-left: 69px;
+      /* Since it is fixed, remove margin-top to avoid confusion, though it acts as offset now */
+      margin-top: 0; 
+      /* Optional: Add a subtle background or blur if content scrolls under it? */
+      /* background: rgba(10, 10, 10, 0.8); */
+      /* backdrop-filter: blur(10px); */
+
+      .rectangle401 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-top: 0px;
+        border-radius: 20px;
+        background: #6f6f6fb5;
+        padding: 5px 15px 7px 14px;
+        width: auto;
+        min-width: 101px;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+
+        &:hover {
+            transform: scale(1.05);
+            background: #888888b5;
+        }
+
+        .miniBird {
+          width: 24px;
+          height: 24px;
+          margin-right: 4px;
+          flex-shrink: 0;
+          border-radius: 50%;
+        }
+
+        .bluebird {
+          display: flex;
+          align-items: center;
+          margin: 0;
+          line-height: 20px;
+          letter-spacing: 0.2px;
+          color: #57c5e2;
+          font-family: "Nunito", "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+
+      .autoWrapper {
+        position: relative;
+        width: 648px;
+        height: 60px;
+        margin-right: 0px;
+
+        .find {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 648px;
+          height: 53px;
+
+          .rectangle378 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.62;
+            border-radius: 15px;
+            box-shadow: 0px 37px 14px 0px #5ed4ff05, 0px 20px 13px 0px #5ed4ff14,
+              0px 9px 9px 0px #5ed4ff21, 0px 3px 5px 0px #5ed4ff26;
+            width: 648px;
+            height: 53px;
+            background-image: linear-gradient(
+              264.96deg,
+              #c7f0ff66 10.7%,
+              #5ed4ff66 60.35%,
+              #c7f0ff66 102.91%
+            );
+            backdrop-filter: blur(5px);
+          }
+
+          .extraDarkBg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 648px;
+            height: 53px;
+            border-radius: 15px;
+            background: #0f1315; /* Dark background color from requirement */
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.3s ease;
+            z-index: 3; /* Above gradient */
+          }
+
+          /* When competition is active, show the dark bg */
+          &.active-competition .extraDarkBg {
+            opacity: 1; /* Fully opaque for obvious effect */
+          }
+
+          .rectangle379 {
+            position: absolute;
+            top: 6px;
+            left: 5px; /* Default position for Home */
+            opacity: 0.55;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px 0px #007bd74d, 0px 3px 10px 0px #007bd766,
+              0px 8px 20px 0px #007bd766;
+            background-color: #020202;
+            width: 141px;
+            height: 41px;
+            background-image: linear-gradient(
+              180deg,
+              #007bd700 0%,
+              #007bd733 100%
+            );
+            transition: left 0.3s ease; /* Smooth transition for movement */
+            z-index: 4; /* Keep active pill above dark bg */
+          }
+
+          /* Active State Modifiers applied to parent or via inline styles */
+          &.active-competition .rectangle379 {
+             left: 167px; /* Move to Competition tab position */
+          }
+
+          .frame2860 {
+            display: inline-flex;
+            position: absolute;
+            top: 16px;
+            left: 27px;
+            align-items: center;
+            column-gap: 64px;
+            opacity: 0.8;
+            width: 584px;
+            height: 20px;
+            z-index: 10; /* Ensure text is above the moving background pill */
+
+            .navItem {
+              flex-shrink: 0;
+              line-height: 20px;
+              letter-spacing: 0.48px;
+              color: #ffffff; /* Default color */
+              font-family: "Alimama FangYuanTi VF", "Nunito", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+              font-size: 24px;
+              font-weight: bold;
+              cursor: pointer;
+              transition: color 0.3s;
+
+              &.active {
+                 color: #57c5e2; /* Active color */
+              }
+              
+              &:hover {
+                color: #57c5e2;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .hiIAm {
+      margin: 230px 0px 0px 85px; /* Revert margin-top */
+      line-height: 1.2;
+      letter-spacing: 0.96px;
+      color: #57c5e2;
+      font-family: "Nunito", "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 48px;
+      font-weight: bold;
+      white-space: pre;
+      display: flex;
+      align-items: center;
+      
+      /* Animation */
+      opacity: 0;
+      animation: slideInLeft 1s ease-out forwards;
+      animation-delay: 0.2s;
+
+      .exclamation {
+        margin-left: 4px;
+      }
+    }
+
+    .a2 {
+      margin: 20px 0px 0px 85px;
+      line-height: 1.2;
+      letter-spacing: 1.6px;
+      color: #ffffff;
+      font-family: "Nunito", "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 80px;
+      font-weight: bold;
+
+      /* Animation */
+      opacity: 0;
+      animation: fadeIn 1.5s ease-out forwards;
+      animation-delay: 1.2s; /* Starts after "Hi! I am" finishes */
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .a3 {
+      margin: 30px 0px 0px 85px;
+      width: 539px;
+      line-height: 1.5;
+      letter-spacing: 0.32px;
+      color: #ffffff;
+      font-family: "Nunito", "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+
+    .autoWrapper7 {
+      display: flex;
+      position: relative;
+      align-items: flex-start;
+      align-self: stretch;
+      justify-content: space-between;
+      margin-top: 47px;
+      padding-right: 19px;
+
+      .ellipse88 {
+        position: absolute;
+        top: -470px;
+        right: -107px;
+        opacity: 0.32;
+        border-radius: 50%;
+        background: #2d5361;
+        width: 174px;
+        height: 516px;
+        filter: blur(79px);
+      }
+
+      .autoWrapper6 {
+        display: flex;
+        position: relative;
+        align-items: flex-start;
+        align-self: stretch;
+        justify-content: space-between;
+        width: 100%;
+
+        .autoWrapper5 {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          align-self: stretch;
+
+          .autoWrapper3 {
+            display: flex;
+            align-items: center;
+            align-self: stretch;
+            justify-content: flex-start;
+            padding-left: 85px;
+            gap: 20px;
+
+            .text3 {
+              line-height: 20px;
+              letter-spacing: 0.64px;
+              color: #ffffff;
+              font-family: "Nunito", "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+              font-size: 32px;
+              font-weight: bold;
+            }
+          }
+
+          .autoWrapper4 {
+            position: relative;
+            margin-top: 40px;
+            margin-left: 85px;
+            width: 500px;
+
+            .scrollContainer {
+              width: 100%;
+              height: 28px;
+              overflow: hidden;
+              position: relative;
+            }
+
+            .scrollItem {
+              width: 100%;
+              line-height: 2;
+              letter-spacing: 0.24px;
+              color: #ffffff;
+              font-family: "Nunito", "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+              font-size: 14px;
+              white-space: nowrap;
+              margin: 0;
+            }
+          }
+        }
+
+        .blueBirdLabel {
+          position: absolute;
+          bottom: 10px;
+          right: 50px;
+          opacity: 0.8;
+          height: auto;
+          width: auto;
+          max-width: 600px;
+        }
+
+        .text5 {
+          position: absolute;
+          bottom: -150px;
+          right: 50px;
+          opacity: 0.8;
+          height: auto;
+          width: auto;
+          max-width: 1000px;
+        }
+      }
+    }
+
+    .shu {
+      position: absolute;
+      top: 150px; /* Moved up from 230px */
+      right: 100px;
+      width: 837px; /* 698px * 1.2 */
+      height: 609px; /* 508px * 1.2 */
+      
+      /* Reset previous flex/child styles since it's now an img */
+      object-fit: contain;
+    }
+  }
+}

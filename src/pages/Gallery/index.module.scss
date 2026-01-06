@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #ffffff;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 0; /* Removed padding top as topTransition handles spacing */
+  position: relative;
+
+  .topTransition {
+    width: 100%;
+    height: 430px;
+    background-image: linear-gradient(
+      0deg,
+      #ffffff 0%,
+      #ebebeb 33.65%,
+      #d4d4d4 48.56%,
+      #9c9c9c 62.02%,
+      #000000 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 50px; /* Space for header content */
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column; /* Changed to column to stack title parts */
+    width: 100%;
+    /* max-width: 1200px; Removed to allow full width */
+    position: relative;
+    margin-bottom: 50px;
+    height: 300px; /* Give some height for absolute positioning */
+
+    .titleWrapper {
+        display: flex;
+        width: 100%;
+    }
+
+    .outlineText {
+      position: absolute;
+      top:180px; /* Moved down */
+      left: 0;
+      width: 624px;
+      height: 116px;
+      opacity: 0.54;
+      object-fit: contain;
+    }
+
+    .centerTitleGroup {
+      position: absolute;
+      top: 250px; 
+      left: 52%; /* Moved slightly right from 50% */
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 10;
+      width: 100%; 
+      justify-content: center; 
+    }
+
+    .centerTitle {
+        font-family: "Alimama FangYuanTi VF", "PingFang SC", sans-serif;
+        font-size: 48px;
+        font-weight: bold;
+        color: #000000;
+        margin: 0;
+      }
+
+    .birdIcon {
+        width: 90px; /* Reduced size from 136px */
+        height: 90px; /* Reduced size from 138px */
+        object-fit: contain;
+        margin-bottom: 50px; /* Move slightly up */
+        margin-left: 10px; /* Move slightly right */
+    }
+
+    .outlineTextRight {
+      position: absolute;
+      top: 300px; /* Adjusted top position based on layout */
+      right: 0;
+      width: 649px;
+      height: 150px;
+      opacity: 0.50;
+      object-fit: contain;
+    }
+  }
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 100px; /* Row gap 40px, Col gap 100px */
+    width: 100%;
+    max-width: 100%; /* Changed from 1240px to 100% to fill screen */
+    padding: 0 65px; /* Adjusted padding to be consistent with Experience page */
+    margin-bottom: 100px;
+    margin-top: 100px; /* Added margin-top to move grid down */
+    position: relative; /* Create stacking context */
+    z-index: 1; /* Set to 1: Above gradient (0), below nav (1000) */
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    /* Removed initial opacity: 0 to ensure visibility if JS fails */
+    /* opacity: 0; */
+    /* transform: translateY(30px); */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+    /* &.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: var(--delay);
+    } */
+    
+    /* Default visible for now */
+    opacity: 1;
+    transform: translateY(0);
+
+    .placeholder {
+      width: 100%;
+      height: 450px; /* Increased height from 334px to 400px */
+      background-color: #d9d9d9;
+      margin-bottom: 20px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .cardTitle {
+        font-family: "Alimama FangYuanTi VF", "PingFang SC", sans-serif;
+        font-size: 20px;
+        color: #000000;
+        margin: 0;
+        max-width: 70%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: bold; /* Added bold */
+      }
+
+      .detailsGroup {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+
+        .detailsText {
+          font-family: "Alimama FangYuanTi VF", sans-serif;
+          font-size: 20px; /* Slightly smaller than Figma for better fit */
+          color: #57c5e2;
+          margin: 0;
+          font-weight: bold; /* Added bold */
+        }
+
+        .arrow {
+          width: 21px;
+          height: 18px;
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px; /* Increased top margin to separate from grid */
+    margin-bottom: 100px; 
+    z-index: 1;
+
+    .footerBird {
+      width: 222px;
+      height: 164px;
+      margin-bottom: 50px; /* Space between bird and text */
+      object-fit: contain;
+    }
+
+    .footerText {
+      font-family: "Alimama FangYuanTi VF", "PingFang SC", sans-serif;
+      font-size: 32px; /* Increased font size */
+      color: #57c5e2;
+      margin-bottom: 20px;
+      font-weight: bold; 
+      margin-top: 0; /* Reset margin top as bird is above */
+      letter-spacing: 0.64px; /* Matches original design */
+    }
+  }
+
+  .bottomGradient {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1200px; 
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      #57C5E2 48%,
+      #000000 100%
+    );
+    pointer-events: none; 
+    z-index: 0; 
+  }
+}

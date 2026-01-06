@@ -1,0 +1,466 @@
+.start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  .x {
+    position: relative;
+    width: 1440px;
+    height: 949px;
+    overflow: visible;
+    transform: translateY(-80px);
+
+    .expandingRings {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        height: 1000px;
+        z-index: 0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .ring {
+            position: absolute;
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            animation: ringExpand 3s linear infinite;
+
+            .dot {
+                position: absolute;
+                border-radius: 50%;
+                filter: blur(1px);
+                /* Center the dot on the ring's stroke */
+                top: 50%; 
+                left: 50%;
+                /* We will use transform to position dots on the ring */
+                
+                /* Randomly assign styles to simulate Ellipse 84 and 85 */
+                &:nth-child(odd) {
+                    width: 32px;
+                    height: 32px;
+                    margin-top: -16px;
+                    margin-left: -16px;
+                    background: #6CF0FC; /* Cyan */
+                    box-shadow: 0 0 15px #6CF0FC;
+                }
+                
+                &:nth-child(even) {
+                    width: 18px;
+                    height: 18px;
+                    margin-top: -9px;
+                    margin-left: -9px;
+                    background: #ffffff; /* White */
+                    box-shadow: 0 0 10px #ffffff;
+                }
+            }
+
+            &:nth-child(1) {
+                animation-delay: 0s;
+                .dot:nth-child(1) { transform: rotate(0deg) translateY(-500px); }
+                .dot:nth-child(2) { transform: rotate(120deg) translateY(-500px); }
+                .dot:nth-child(3) { transform: rotate(240deg) translateY(-500px); }
+            }
+            &:nth-child(2) {
+                animation-delay: 0.6s;
+                .dot:nth-child(1) { transform: rotate(60deg) translateY(-500px); }
+                .dot:nth-child(2) { transform: rotate(240deg) translateY(-500px); }
+            }
+            &:nth-child(3) {
+                animation-delay: 1.2s;
+                .dot:nth-child(1) { transform: rotate(30deg) translateY(-500px); }
+                .dot:nth-child(2) { transform: rotate(150deg) translateY(-500px); }
+                .dot:nth-child(3) { transform: rotate(270deg) translateY(-500px); }
+            }
+            &:nth-child(4) {
+                animation-delay: 1.8s;
+                .dot:nth-child(1) { transform: rotate(90deg) translateY(-500px); }
+                .dot:nth-child(2) { transform: rotate(270deg) translateY(-500px); }
+            }
+            &:nth-child(5) {
+                animation-delay: 2.4s;
+                .dot:nth-child(1) { transform: rotate(45deg) translateY(-500px); }
+                .dot:nth-child(2) { transform: rotate(180deg) translateY(-500px); }
+                .dot:nth-child(3) { transform: rotate(315deg) translateY(-500px); }
+            }
+        }
+    }
+
+    .welcomeTo {
+      display: flex;
+      position: absolute;
+      top: 100px;
+      left: 67px;
+      align-items: center;
+      width: auto;
+      height: 182px;
+      line-height: 20px;
+      letter-spacing: 2.56px;
+      color: #ffffff;
+      font-family: "Nunito", "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 128px;
+      font-weight: bold;
+      z-index: 1; /* Lower z-index to be behind bird */
+      white-space: nowrap;
+      animation: slideInLeft 1s ease-out forwards;
+    }
+
+    .birdWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 5;
+    }
+
+    .a5 {
+      position: absolute;
+      top: 449px;
+      left: 501px;
+      width: 439px;
+      height: 72px;
+    }
+
+    .headStatic {
+      position: absolute;
+      top: 338px;
+      left: 538px;
+      width: 365px;
+      height: 302px;
+    }
+
+    .layer5 {
+      position: absolute;
+      top: 319px;
+      left: 569px;
+      width: 302px;
+      height: 312px;
+      background-image: url(../../assets/images/mj8avgpp-8z9tra6.svg);
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      .pupils {
+        display: flex;
+        position: absolute;
+        top: 132px;
+        left: 42px;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 1px;
+        width: 218px;
+        height: 78px;
+
+        .ellipse11 {
+          border-radius: 50%;
+          width: 77px;
+          height: 78px;
+          background: linear-gradient(180deg, #000000 50%, #1a2a6c 100%);
+          box-shadow: inset 0 -5px 10px rgba(255, 255, 255, 0.1);
+        }
+      }
+
+      .a2 {
+        position: absolute;
+        top: 193px;
+        left: 126px;
+        width: 52px;
+        height: 52px;
+      }
+
+      .fly {
+        position: absolute;
+        top: 69px;
+        left: 64px;
+        width: 174px;
+        height: 174px;
+        /* Animation removed from here to allow transform in inline style (parallax) to work */
+
+        .flyRandom {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            animation: 
+                randomX 3.7s ease-in-out infinite alternate,
+                randomY 2.9s ease-in-out infinite alternate;
+        }
+
+        .flyMover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            animation: figureEight 3s infinite linear;
+        }
+
+        .flySprite {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: 47px 37px; /* Center rotation on the bug's body */
+            animation: flyCycle 0.8s steps(8) infinite;
+        }
+
+        .ellipse28 {
+          position: absolute;
+          top: 34px;
+          left: 50px;
+          border-radius: 50%;
+          background: #9bd4e673;
+          width: 11px;
+          height: 6px;
+          animation: wingFlap 0.1s ease-in-out infinite alternate;
+        }
+
+        .ellipse29 {
+          position: absolute;
+          top: 34px;
+          left: 34px;
+          border-radius: 50%;
+          background: #9bd4e673;
+          width: 11px;
+          height: 6px;
+          rotate: -180deg;
+          animation: wingFlap 0.1s ease-in-out infinite alternate-reverse;
+        }
+
+        .ellipse27 {
+          position: absolute;
+          top: 30px;
+          left: 44px;
+          border-radius: 50%;
+          background: #151313;
+          width: 7px;
+          height: 13px;
+        }
+      }
+
+      @keyframes flyCycle {
+          0% { transform: scale(1, 1) skew(0deg); }
+          12.5% { transform: scale(1.1, 0.9) skew(2deg); }
+          25% { transform: scale(0.9, 1.1) skew(-2deg); }
+          37.5% { transform: scale(1.15, 0.85) skew(1deg); }
+          50% { transform: scale(0.85, 1.15) skew(0deg); }
+          62.5% { transform: scale(1.05, 0.95) skew(-1deg); }
+          75% { transform: scale(0.95, 1.05) skew(2deg); }
+          87.5% { transform: scale(1.1, 0.9) skew(-2deg); }
+          100% { transform: scale(1, 1) skew(0deg); }
+      }
+
+      @keyframes figureEight {
+          0%   { transform: translate(0, 0) rotate(-45deg); }
+          12.5% { transform: translate(8px, -5px) rotate(0deg); }
+          25%  { transform: translate(15px, 0) rotate(90deg); }
+          37.5% { transform: translate(8px, 5px) rotate(180deg); }
+          50%  { transform: translate(0, 0) rotate(225deg); }
+          62.5% { transform: translate(-8px, -5px) rotate(180deg); }
+          75%  { transform: translate(-15px, 0) rotate(90deg); }
+          87.5% { transform: translate(-8px, 5px) rotate(0deg); }
+          100% { transform: translate(0, 0) rotate(-45deg); }
+      }
+
+      @keyframes randomX {
+          from { left: -10px; }
+          to { left: 10px; }
+      }
+
+      @keyframes randomY {
+          from { top: -8px; }
+          to { top: 8px; }
+      }
+
+      @keyframes wingFlap {
+          from { transform: scaleX(1); }
+          to { transform: scaleX(0.5); }
+      }
+
+      .eyeLightsStatic {
+      display: flex;
+      position: absolute;
+      top: 134px;
+      left: 44px;
+      align-items: center;
+      width: 215px;
+      height: 74px;
+
+      .ellipse13 {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        opacity: 0.28;
+        border-radius: 50%;
+        background: #ffffff;
+        width: 53px;
+        height: 49px;
+        rotate: -14deg;
+      }
+
+      .ellipse12 {
+        position: absolute;
+        top: 49px;
+        left: 45px;
+        border-radius: 50%;
+        width: 24px;
+        height: 22px;
+        rotate: -14deg;
+        background-image: linear-gradient(180deg, #ffffff 0%, #ffffff00 100%);
+      }
+
+      .a1 {
+        position: relative;
+        width: 72px;
+        height: 74px;
+      }
+
+      .a2 {
+        position: absolute;
+        top: 0;
+        left: 141px;
+        width: 72px;
+        height: 74px;
+      }
+    }
+    }
+
+    .a6 {
+      position: absolute;
+      top: 601px;
+      left: 599px;
+      width: 245px;
+      height: 43px;
+    }
+
+    .blueBird {
+      display: flex;
+      position: absolute;
+      top: 450px;
+      left: 780px;
+      align-items: center;
+      width: auto;
+      height: 209px;
+      line-height: 20px;
+      letter-spacing: 2.56px;
+      color: #ffffff;
+      font-family: "Nunito", "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 128px;
+      font-weight: bold;
+      z-index: 10;
+      white-space: nowrap;
+      animation: slideInRight 1s ease-out forwards;
+    }
+
+    .enterButton {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 720px;
+        height: 85px;
+        padding: 0;
+        
+        border: none;
+        border-radius: 18px;
+        background: linear-gradient(90deg, #74bbfb 0%, #eaf6ff 50%, #74bbfb 100%);
+        
+        cursor: pointer;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+        animation-delay: 1.5s;
+        z-index: 20;
+        transition: transform 0.3s ease;
+
+        .btnText {
+            font-family: "Nunito", "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+            font-size: 48px;
+            font-weight: bold;
+            color: #000000;
+            letter-spacing: 0.96px;
+            white-space: nowrap;
+            margin-right: 60px;
+            margin-bottom: 2px; /* Slight nudge up */
+        }
+
+        .btnArrow {
+            position: absolute;
+            right: 32px;
+            width: 60px;
+            height: 52px;
+            color: #000000;
+        }
+
+        &:hover {
+            transform: translateX(-50%) scale(1.02);
+        }
+    }
+  }
+}
+
+@keyframes ringExpand {
+    0% {
+        transform: scale(0.4) rotate(0deg); /* Start slightly smaller and rotate */
+        opacity: 0;
+        border-width: 6px;
+    }
+    20% {
+        opacity: 1;
+        border-width: 3px;
+    }
+    60% {
+        opacity: 0; /* Fade out sooner */
+        border-width: 1px;
+    }
+    100% {
+        transform: scale(1.5) rotate(45deg); /* Expand and rotate clockwise */
+        opacity: 0;
+        border-width: 0px;
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

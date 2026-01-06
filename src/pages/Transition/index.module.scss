@@ -1,0 +1,182 @@
+.transition {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height */
+  /* Vertical gradient from black to teal-ish */
+  background: linear-gradient(180deg, #0a0a0a 0%, #0a0a0a 20%, #2d5361 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  scroll-snap-align: none; 
+  
+  .gridsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 150px; /* Space between the three grids */
+    margin-top: 80px;
+    opacity: 0.8;
+    
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px; /* Vertical gap between dots */
+      
+      .row {
+         display: flex;
+         gap: 8px; /* Horizontal gap between dots */
+      }
+      
+      .dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  /* 
+     To create the "Stepped" bottom edge that reveals white background below:
+     Actually, this component sits ABOVE the white competition section.
+     So we need the bottom of THIS component to be the steps.
+     
+     Wait, looking at image_3/4:
+     The gradient background HAS the step shape at the bottom.
+     The "step" is essentially transparent, revealing the white content below?
+     OR the step IS the teal shape on top of white?
+     
+     Image_3 description: "Bottom edge: stepped '阶梯' cutout... descending from right to left."
+     Image_1 description: "Bottom silhouette: A black 'stair-step' shape rising from left to right"
+     
+     Let's look at Image 4 (Full composition):
+     Hero (Black) -> Gradient Area -> Stepped Edge -> Competition (White).
+     The Stepped Edge is the BOUNDARY.
+     So the Gradient area ends in steps.
+     
+     We can simulate this by having the container be the gradient, 
+     and then masking it, OR placing white blocks on top? 
+     No, placing white blocks at the bottom is easier if next section is white.
+     BUT the next section is Competition, which is white.
+     
+     So we can just make the Transition component have the gradient background,
+     and at the bottom, we layer some "White" blocks to create the "Inverse Step" look.
+     i.e. The gradient looks like it's stepped.
+  */
+  
+  .steppedEdge {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: flex-end;
+    /* We want the GRADIENT to look stepped. 
+       So we actually need to cover the gradient with WHITE steps?
+       If the next section is white, yes.
+       
+       Let's say the gradient fills the whole rect.
+       We place a White Block on the left (low step), middle (mid step), right (high step)?
+       No, usually it's the Gradient that forms the shape.
+       
+       Let's try to make the gradient shape itself using flex items.
+    */
+  }
+}
+
+/* 
+   Actually, a cleaner way:
+   The Transition component renders the Gradient part.
+   The Bottom of it is jagged.
+   We can use `clip-path` or just stack divs.
+   
+   Let's try stacking divs for the gradient part itself, against a transparent background?
+   But the background behind it needs to be... white?
+   
+   Let's assume the page background is White (from Competition).
+   And this Transition component sits on top.
+   So we just need to draw the Gradient Steps.
+*/
+
+.transition {
+    background: transparent; /* Reset */
+    /* We will build the gradient using the children */
+    position: relative;
+    height: auto;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gradientBody {
+    width: 100%;
+    flex-grow: 1;
+    background: linear-gradient(180deg, #0a0a0a 0%, #2d5361 100%);
+    display: flex;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    min-height: 350px;
+}
+
+.gridsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 0; /* Remove gap, use width to align with steps */
+    width: 100%; /* Full width to match steps */
+    
+    .gridWrapper {
+      width: 33.33%; /* Match step width */
+      display: flex;
+      justify-content: center; /* Center dot grid within the step width */
+    }
+
+    .grid {
+      display: flex;
+      flex-direction: column;
+      gap: 50px; /* Further increased vertical gap */
+      
+      .row {
+         display: flex;
+         gap: 50px; /* Further increased horizontal gap */
+      }
+      
+      .dot {
+        width: 8px; /* Slightly larger dots */
+        height: 8px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        opacity: 0.6;
+      }
+    }
+}
+
+.stepsContainer {
+    display: flex;
+    align-items: flex-start;
+    height: 300px; /* Increased height for larger drops */
+    background: #ffffff; /* White background to show behind the steps */
+    margin-top: -1px; 
+}
+
+.step1 {
+    width: 33.33%; /* Equal width */
+    height: 300px; /* Full height */
+    background: #2d5361; 
+    border-bottom-right-radius: 15px; 
+}
+
+.step2 {
+    width: 33.33%; /* Equal width */
+    height: 180px; /* Drop of 120px */
+    background: #2d5361;
+    border-bottom-right-radius: 15px; 
+    position: relative;
+}
+
+.step3 {
+    width: 33.33%; /* Equal width */
+    height: 60px; /* Drop of 120px */
+    background: #2d5361;
+    border-bottom-right-radius: 15px; 
+}
