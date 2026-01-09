@@ -35,7 +35,8 @@ const Card = ({
     desc, 
     certImg, 
     decImg, 
-    decClass 
+    decClass,
+    onClick
 }) => {
     return (
         <div className={`${styles.card} ${className}`}>
@@ -54,7 +55,7 @@ const Card = ({
             
             <img src={decImg} className={`${styles.decoration} ${decClass || ''}`} alt="decoration" />
             
-            <div className={styles.detailsBtn}>
+            <div className={styles.detailsBtn} onClick={onClick} style={{ cursor: 'pointer', zIndex: 999 }}>
                 <p>Details</p>
             </div>
             
@@ -100,6 +101,14 @@ const Competition = () => {
     shipRef.current.scrollLeft = scrollLeft - walk;
   };
 
+  const handleDetailClick = (id) => {
+    if (['g1', 'g3', 'g4'].includes(id)) {
+      navigate('/detail1');
+    } else if (['g2', 'g5'].includes(id)) {
+      navigate('/detail2');
+    }
+  };
+
   const cardsData = [
       {
           id: 'g1',
@@ -109,7 +118,8 @@ const Competition = () => {
           desc: "由全国高等学校计算机教育研究会主办、浙江大学与苹果公司联合承办的移动应用类赛事，是中国高校计算机大赛的竞赛模块之一",
           certImg: certificateImg,
           decImg: decImg,
-          decClass: styles.decG1
+          decClass: styles.decG1,
+          onClick: () => handleDetailClick('g1')
       },
       {
           id: 'g2',
@@ -119,7 +129,8 @@ const Competition = () => {
           desc: "中国国际大学生创新大赛，由教育部等12个部门会同天津市人民政府主办，旨在推动创新创业教育改革，激发大学生创新创业热情。",
           certImg: cert2Img,
           decImg: dec2Img,
-          decClass: styles.decG2
+          decClass: styles.decG2,
+          onClick: () => handleDetailClick('g2')
       },
       {
           id: 'g3',
@@ -129,7 +140,8 @@ const Competition = () => {
           desc: "未来设计师·全国高校数字艺术设计大赛（NCDA）是入选《全国普通高校学科竞赛排行榜》，多家教育厅认定，“学习强国”学习平台支持的国家级大学生竞赛。",
           certImg: cert3Img,
           decImg: dec3Img,
-          decClass: styles.decG3
+          decClass: styles.decG3,
+          onClick: () => handleDetailClick('g3')
       },
       {
           id: 'g4',
@@ -139,7 +151,8 @@ const Competition = () => {
           desc: "未来设计师·全国高校数字艺术设计大赛（NCDA）是入选《全国普通高校学科竞赛排行榜》，多家教育厅认定，“学习强国”学习平台支持的国家级大学生竞赛。",
           certImg: cert4Img,
           decImg: dec4Img,
-          decClass: styles.decG4
+          decClass: styles.decG4,
+          onClick: () => handleDetailClick('g4')
       },
       {
           id: 'g5',
@@ -149,7 +162,8 @@ const Competition = () => {
           desc: "未来设计师·全国高校数字艺术设计大赛（NCDA）是入选《全国普通高校学科竞赛排行榜》，多家教育厅认定，“学习强国”学习平台支持的国家级大学生竞赛。",
           certImg: cert5Img,
           decImg: commonDecImg,
-          decClass: styles.decCommon
+          decClass: styles.decCommon,
+          onClick: () => handleDetailClick('g5')
       },
       {
           id: 'g6',
@@ -159,7 +173,8 @@ const Competition = () => {
           desc: "元宇宙设计周——中国高校数字创意设计大赛是由国际人工智能发展联盟、国际大学生商学联合会、当代设计师协会联合主办的设计赛事，旨在推动数字经济发展与元宇宙赛道布局。",
           certImg: cert6Img,
           decImg: commonDecImg,
-          decClass: styles.decCommon
+          decClass: styles.decCommon,
+          onClick: () => {} // No specific action for g6 yet
       }
   ];
 

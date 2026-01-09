@@ -63,8 +63,9 @@ const Experience = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (galleryRef.current) {
-        const galleryTop = galleryRef.current.getBoundingClientRect().top;
+      const galleryElement = document.getElementById('gallery-section');
+      if (galleryElement) {
+        const galleryTop = galleryElement.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
         
         // If Gallery is roughly in view (e.g. top 1/3 of screen or higher)
@@ -240,9 +241,6 @@ const Experience = () => {
             <img src={decorateVector} className={styles.decorate} alt="decoration" />
         </div>
         <Bubbles />
-      </div>
-      <div ref={galleryRef}>
-        <Gallery activeSection={activeSection} />
       </div>
     </div>
   );

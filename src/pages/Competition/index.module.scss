@@ -220,7 +220,7 @@
         padding: 5px 46px;
         width: 157px;
         height: 29px;
-        z-index: 5;
+        z-index: 20; /* Increased z-index */
         cursor: pointer;
         transition: transform 0.2s;
 

@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column; /* Changed to column to stack Experience and Gallery */
   align-items: flex-start;
-  background: #0a0a0a;
+  background: #000000; /* Changed from #0a0a0a to #000000 for seamless transition */
   width: 100%;
   min-height: 100vh;
   padding-top: 0px; 
@@ -16,7 +16,8 @@
   overflow-x: hidden; /* Prevent horizontal scroll */
   position: relative;
   scroll-snap-align: start;
-  margin-top: -1px; 
+  margin-bottom: -1px; /* Added negative margin to overlap with next section */
+  z-index: 1; /* Ensure it stays above if needed */
 
   .study {
     line-height: 55px;
@@ -87,10 +88,10 @@
 
   .bubbleContainer {
     position: absolute;
-    bottom: 0;
+    bottom: 50px; /* Reduced bottom spacing */
     right: 0;
     width: 500px;
-    height: 700px;
+    height: 900px; 
     pointer-events: none;
     z-index: 0;
     overflow: hidden;
@@ -251,9 +252,11 @@
     margin-top: 140px;
     margin-left: 0; /* Adjusted from negative margin */
     padding-left: 65px;
+    padding-bottom: 150px; /* Reduced padding from 300px */
     flex: 1;
     min-height: 100vh; /* Ensure wrapper takes full viewport height for relative positioning */
     position: relative; /* Context for bubbleContainer */
+    overflow: hidden; /* Prevent inner scrollbars */
 
     .mainTitle {
       margin: 0px 0px 0px 0px;

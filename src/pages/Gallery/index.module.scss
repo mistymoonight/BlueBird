@@ -125,6 +125,53 @@
     opacity: 1;
     transform: translateY(0);
 
+    .imageContainer {
+      position: relative;
+      width: 100%;
+      height: 450px;
+      margin-bottom: 20px;
+      overflow: hidden;
+
+      .cardImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .blank {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 55px;
+        background-image: linear-gradient(0deg, #000000 0%, #00000000 100%);
+        display: flex;
+        align-items: center;
+        padding-left: 17px;
+        gap: 10px;
+
+        .tag {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 20px;
+          background: #57c5e2;
+          padding: 4px 17px;
+          height: 28px;
+          
+          .tagText {
+            line-height: 20px;
+            letter-spacing: 0.28px;
+            color: #ffffff;
+            font-family: "Alimama FangYuanTi VF", "PingFang SC", sans-serif;
+            font-size: 14px;
+            margin: 0;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
     .placeholder {
       width: 100%;
       height: 450px; /* Increased height from 334px to 400px */
@@ -154,6 +201,11 @@
         align-items: center;
         gap: 10px;
         cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
 
         .detailsText {
           font-family: "Alimama FangYuanTi VF", sans-serif;

@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import styles from './index.module.scss';
 import littleBirdIcon from '../../assets/images/littlebird.svg';
 import blueBirdText from '../../assets/images/bluebird-text.png';
@@ -8,6 +9,7 @@ import shuIcon from '../../assets/images/shu.svg';
 import Transition from '../Transition';
 import Competition from '../Competition';
 import Experience from '../Experience';
+import Gallery from '../Gallery';
 
 const TypewriterLine = ({ texts }) => {
   const [index, setIndex] = useState(0);
@@ -71,6 +73,7 @@ const TypewriterLine = ({ texts }) => {
 
 const HomePage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [activeTab, setActiveTab] = useState('home'); // 'home', 'competition', 'experience'
   const homepageRef = useRef(null);
 
@@ -88,6 +91,30 @@ const HomePage = () => {
       if (id === 'experience-section') setActiveTab('experience');
     }
   };
+
+  // Handle initial scroll from navigation state
+  useLayoutEffect(() => {
+    if (location.state?.targetSection) {
+      const element = document.getElementById(location.state.targetSection);
+      if (element) {
+        element.scrollIntoView({ behavior: 'auto' });
+        if (location.state.targetSection === 'gallery-section') {
+          setActiveTab('gallery');
+        }
+      } else {
+        // Fallback if element is not immediately available
+        requestAnimationFrame(() => {
+           const el = document.getElementById(location.state.targetSection);
+           if (el) {
+             el.scrollIntoView({ behavior: 'auto' });
+             if (location.state.targetSection === 'gallery-section') {
+                setActiveTab('gallery');
+             }
+           }
+        });
+      }
+    }
+  }, [location]);
 
   // Scroll listener to update active tab
   useEffect(() => {
@@ -158,7 +185,14 @@ const HomePage = () => {
   };
 
   return (
-    <div className={styles.homepage} ref={homepageRef}>
+    <motion.div 
+      className={styles.homepage} 
+      ref={homepageRef}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className={styles.fenwei} id="hero-section">
         <div className={styles.autoWrapper2}>
           <div className={styles.rectangle401} onClick={handleBack} style={{cursor: 'pointer'}}>
@@ -252,14 +286,18 @@ const HomePage = () => {
 
       <Transition />
 
-      <div id="competition-section">
+      <div id="competition-section" style={{ scrollSnapAlign: 'start' }}>
         <Competition />
       </div>
       
-      <div id="experience-section">
+      <div id="experience-section" style={{ scrollSnapAlign: 'start' }}>
         <Experience />
       </div>
-    </div>
+      
+      <div id="gallery-section" style={{ scrollSnapAlign: 'start' }}>
+        <Gallery />
+      </div>
+    </motion.div>
   );
 }
 
