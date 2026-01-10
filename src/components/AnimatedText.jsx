@@ -40,7 +40,7 @@ const AnimatedText = ({ text, className, delay = 0 }) => {
         if (indexRef.current < text.length) {
           setDisplayText(text.substring(0, indexRef.current + 1));
           indexRef.current++;
-          timerRef.current = setTimeout(typeEffect, 50);
+          timerRef.current = setTimeout(typeEffect, 100);
         }
       };
 
