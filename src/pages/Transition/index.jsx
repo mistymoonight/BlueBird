@@ -10,7 +10,7 @@ const Transition = () => {
                <div className={styles.gridWrapper} key={gridIndex}>
                  <div className={styles.grid}>
                     {/* Rows */}
-                    {[...Array(5)].map((_, row) => (
+                    {[...Array(6)].map((_, row) => (
                        <div className={styles.row} key={row}>
                           {/* Columns */}
                           {[...Array(8)].map((_, col) => (
