@@ -110,20 +110,17 @@
     flex-direction: column;
     width: 100%;
     
-    /* Removed initial opacity: 0 to ensure visibility if JS fails */
-    /* opacity: 0; */
-    /* transform: translateY(30px); */
+    /* Initial state: hidden */
+    opacity: 0;
+    transform: translateY(30px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 
-    /* &.visible {
+    /* When visible: fade in with staggered delay */
+    &.visible {
       opacity: 1;
       transform: translateY(0);
-      transition-delay: var(--delay);
-    } */
-    
-    /* Default visible for now */
-    opacity: 1;
-    transform: translateY(0);
+      transition-delay: var(--delay); /* Staggered delay - use direct delay value */
+    }
 
     .imageContainer {
       position: relative;
@@ -218,6 +215,15 @@
         .arrow {
           width: 21px;
           height: 18px;
+          opacity: 0;
+          transform: translateX(-10px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+          transition-delay: 0.3s;
+        }
+
+        .arrowVisible {
+          opacity: 1;
+          transform: translateX(0);
         }
       }
     }

@@ -36,11 +36,63 @@ import gg22Img from '../../assets/images/mjrw1mb1-jjv67i3.png';
 import gg23Img from '../../assets/images/mjrw1mdf-kah69f9.png';
 import gg24Img from '../../assets/images/mjrw1mkd-yytkswd.png';
 
-const Card = ({ title, details, index, isVisible, image, tags, onClickDetails }) => {
+const Card = ({ title, details, index, image, tags, onClickDetails }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [cardVisible, setCardVisible] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isVisible) {
+      // Add delay before setting cardVisible to ensure card has started fading in
+      const timer = setTimeout(() => {
+        setCardVisible(true);
+      }, 300); // Fixed delay after card becomes visible
+
+      return () => clearTimeout(timer);
+    }
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (cardVisible) {
+      // Add delay for details and arrow to appear after title
+      const timer = setTimeout(() => {
+        setShowDetails(true);
+      }, 500);
+
+      return () => clearTimeout(timer);
+    }
+  }, [cardVisible]);
+
   return (
     <div 
+        ref={cardRef}
         className={`${styles.card} ${isVisible ? styles.visible : ''}`} 
-        style={{ '--delay': `${index * 0.1}s` }}
+        style={{ '--delay': `${Math.floor(index / 2) * 0.4 + (index % 2) * 0.2}s` }} // 每行有0.4s基础延迟，同一行左卡先出现，右卡延迟0.2s
         onClick={onClickDetails}
     >
       <div className={styles.imageContainer} style={{cursor: 'pointer'}}>
@@ -58,11 +110,19 @@ const Card = ({ title, details, index, isVisible, image, tags, onClickDetails })
         </div>
       </div>
       <div className={styles.content}>
-        <p className={styles.cardTitle}>{title}</p>
+        <p className={styles.cardTitle}>
+          {cardVisible && <AnimatedText text={title} className="" delay={300} />}
+        </p>
 
         <div className={styles.detailsGroup}>
-          <p className={styles.detailsText}>Details</p>
-          <img src={vector2Img} className={styles.arrow} alt="arrow" />
+          <p className={styles.detailsText}>
+            {cardVisible && <AnimatedText text="Details" className="" delay={500} direction="left-to-right" speed={50} />}
+          </p>
+          <img 
+            src={vector2Img} 
+            className={`${styles.arrow} ${showDetails ? styles.arrowVisible : ''}`} 
+            alt="arrow" 
+          />
         </div>
       </div>
     </div>
@@ -190,7 +250,6 @@ const Gallery = () => {
             key={index}
             title={item.title}
             index={index}
-            isVisible={isVisible}
             image={item.image}
             tags={item.tags}
             onClickDetails={() => handleCardClick(index)}

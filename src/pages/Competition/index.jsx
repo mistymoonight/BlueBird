@@ -46,10 +46,16 @@ const Card = ({
         <div className={`${styles.card} ${className}`}>
             <div className={styles.cardBg}>
                 <div className={styles.contentWrapper}>
-                    <p className={styles.roleText}>{role}</p>
+                    <p className={styles.roleText}>
+                        <AnimatedText text={role} className="" delay={1000} />
+                    </p>
                     <div className={styles.mainTitleGroup}>
-                        <h2 className={styles.title}>{title}</h2>
-                        <h3 className={styles.award}>{award}</h3>
+                        <h2 className={styles.title}>
+                            <AnimatedText text={title} className="" delay={1500} />
+                        </h2>
+                        <h3 className={styles.award}>
+                            <AnimatedText text={award} className="" delay={2000} />
+                        </h3>
                     </div>
                     <div className={styles.dotsContainer}>
                         <DotsGrid />
@@ -60,11 +66,13 @@ const Card = ({
             <img src={decImg} className={`${styles.decoration} ${decClass || ''}`} alt="decoration" />
             
             <div className={styles.detailsBtn} onClick={onClick} style={{ cursor: 'pointer', zIndex: 999 }}>
-                <p>Details</p>
+                <p>
+                    <AnimatedText text="Details" className="" delay={2500} />
+                </p>
             </div>
             
             <p className={styles.description}>
-                {desc}
+                <AnimatedText text={desc} className="" delay={2800} />
             </p>
             
             <div className={styles.verticalLine} />
