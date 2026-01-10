@@ -279,7 +279,7 @@
       margin: 30px 0px 0px 85px;
       width: 539px;
       line-height: 1.5;
-      letter-spacing: 0.32px;
+      letter-spacing: 0.99px;
       color: #ffffff;
       font-family: "Nunito", "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
       font-size: 16px;
@@ -295,16 +295,17 @@
       padding-right: 19px;
 
       .ellipse88 {
-        position: absolute;
-        top: -470px;
-        right: -107px;
-        opacity: 0.32;
-        border-radius: 50%;
-        background: #2d5361;
-        width: 174px;
-        height: 516px;
-        filter: blur(79px);
-      }
+          position: absolute;
+          top: -600px;
+          right: -200px;
+          opacity: 0.4;
+          border-radius: 70%;
+          background: #57c5e2;
+          width: 400px;
+          height: 400px;
+          filter: blur(150px);
+        }
+        
 
       .autoWrapper6 {
         display: flex;
@@ -336,6 +337,10 @@
               font-size: 32px;
               font-weight: bold;
             }
+            
+            .verticalBar {
+              transform: translateY(-2px);
+            }
           }
 
           .autoWrapper4 {
@@ -366,9 +371,9 @@
 
         .blueBirdLabel {
           position: absolute;
-          bottom: 10px;
+          bottom: 05px;
           right: 50px;
-          opacity: 0.8;
+          opacity: 0.15;
           height: auto;
           width: auto;
           max-width: 600px;
@@ -378,7 +383,7 @@
           position: absolute;
           bottom: -150px;
           right: 50px;
-          opacity: 0.8;
+          opacity: 0.25;
           height: auto;
           width: auto;
           max-width: 1000px;
@@ -386,15 +391,84 @@
       }
     }
 
-    .shu {
+    .star {
       position: absolute;
-      top: 150px; /* Moved up from 230px */
-      right: 100px;
-      width: 837px; /* 698px * 1.2 */
-      height: 609px; /* 508px * 1.2 */
-      
-      /* Reset previous flex/child styles since it's now an img */
+      top: 230px;
+      right: 400px;
+      width: 135px;
+      height: 139px;
+      transform: rotate(-180deg);
       object-fit: contain;
+      opacity: 1;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    
+    .star.blinking {
+      animation: blink 1.5s infinite;
+    }
+    
+    .birdgroup {
+      position: absolute;
+      top: 15px;
+      right: 110px;
+      width: 700px;
+      height: 600px;
+      object-fit: contain;
+      opacity: 0.8;
+      z-index: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .ellipse89 {
+      position: absolute;
+      bottom: -300px;
+      left: -200px;
+      opacity: 0.4;
+      border-radius: 90%;
+      background: #57c5e2;
+      width: 600px;
+      height: 400px;
+      filter: blur(200px);
+    }
+    
+    .englishText {
+      position: absolute;
+      top: 400px;
+      right: 320px;
+      width: 292px;
+      height: 20px;
+      line-height: 20px;
+      letter-spacing: 0.32px;
+      color: #ffffff;
+      font-family: "Nunito", "Alimama FangYuanTi VF", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimHei, Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      text-align: center;
+      z-index: 2;
+      opacity: 0;
+      animation: fadeIn 0.3s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .blueBirdLabel {
+      transition: opacity 0.3s ease;
+    }
+    
+    .text5 {
+      transition: opacity 0.3s ease;
     }
   }
 }

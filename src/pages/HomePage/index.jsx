@@ -5,7 +5,14 @@ import styles from './index.module.scss';
 import littleBirdIcon from '../../assets/images/littlebird.svg';
 import blueBirdText from '../../assets/images/bluebird-text.png';
 import chineseQuote from '../../assets/images/chinese-quote.png';
-import shuIcon from '../../assets/images/shu.svg';
+import starIcon from '../../assets/images/mk8qut2g-xvx04zf.png';
+import star2Icon from '../../assets/images/mk8sv8ua-14c740d.png';
+import birdgroup1Icon from '../../assets/images/birdgroup1.svg';
+import birdgroup2Icon from '../../assets/images/birdgroup2.svg';
+import birdgroup3Icon from '../../assets/images/birdgroup3.svg';
+import birdgroup4Icon from '../../assets/images/birdgroup4.svg';
+import birdgroup5Icon from '../../assets/images/birdgroup5.svg';
+import birdgroup6Icon from '../../assets/images/birdgroup6.svg';
 import Transition from '../Transition';
 import Competition from '../Competition';
 import Experience from '../Experience';
@@ -76,6 +83,25 @@ const HomePage = () => {
   const location = useLocation();
   const [activeTab, setActiveTab] = useState('home'); // 'home', 'competition', 'experience'
   const homepageRef = useRef(null);
+  const timerRef = useRef(null);
+  const birdgroupTimerRef = useRef(null);
+  
+  // State for star interaction
+  const [isStarClicked, setIsStarClicked] = useState(false);
+  const [showEnglishText, setShowEnglishText] = useState(false);
+  const [opacity, setOpacity] = useState(0.8); // For birdgroup, blueBirdLabel, chineseQuote
+  const [isStarBlinking, setIsStarBlinking] = useState(false);
+  
+  // State for birdgroup rotation
+  const [currentBirdgroup, setCurrentBirdgroup] = useState(0);
+  const birdgroupImages = [
+    birdgroup1Icon,
+    birdgroup2Icon,
+    birdgroup3Icon,
+    birdgroup4Icon,
+    birdgroup5Icon,
+    birdgroup6Icon
+  ];
 
   const handleBack = () => {
     navigate('/');
@@ -183,6 +209,53 @@ const HomePage = () => {
           setActiveTab('gallery');
       }
   };
+  
+  // Handle star click event
+  const handleStarClick = () => {
+    setIsStarClicked(true);
+    setShowEnglishText(true);
+    setOpacity(0.1);
+    setIsStarBlinking(true);
+    
+    // Clear any existing timer
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    
+    // Set timer to reset after 3 seconds
+    timerRef.current = setTimeout(() => {
+      setIsStarClicked(false);
+      setShowEnglishText(false);
+      setOpacity(0.8);
+      setIsStarBlinking(false);
+    }, 3000);
+  };
+  
+  // Clean up timer on component unmount
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) {
+        clearTimeout(timerRef.current);
+      }
+      if (birdgroupTimerRef.current) {
+        clearInterval(birdgroupTimerRef.current);
+      }
+    };
+  }, []);
+  
+  // Birdgroup rotation effect
+  useEffect(() => {
+    // Set interval to change birdgroup at a moderate speed
+    birdgroupTimerRef.current = setInterval(() => {
+      setCurrentBirdgroup((prev) => (prev + 1) % birdgroupImages.length);
+    }, 500);
+    
+    return () => {
+      if (birdgroupTimerRef.current) {
+        clearInterval(birdgroupTimerRef.current);
+      }
+    };
+  }, [birdgroupImages.length]);
 
   return (
     <motion.div 
@@ -204,7 +277,7 @@ const HomePage = () => {
             {/* Dynamic class based on activeTab */}
             <div className={`${styles.find} ${activeTab !== 'home' ? styles.activeCompetition : ''}`}>
               <div className={styles.extraDarkBg} /> {/* New dark background layer */}
-              <div className={styles.rectangle378} />
+              <div className={styles.rectangle378} />      
               {/* The moving black pill */}
               <div 
                 className={styles.rectangle379} 
@@ -237,7 +310,6 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
-            <div className={styles.ellipse87} />
           </div>
         </div>
         
@@ -258,7 +330,7 @@ const HomePage = () => {
             <div className={styles.autoWrapper5}>
               <div className={styles.autoWrapper3}>
                 <p className={styles.text3}>王昱心</p>
-                <p className={styles.text3}>|</p>
+                <p className={`${styles.text3} ${styles.verticalBar}`}>|</p>
                 <p className={styles.text3}>浙江大学 工业设计</p>
               </div>
               <div className={styles.autoWrapper4}>
@@ -273,7 +345,6 @@ const HomePage = () => {
                       "科研能力：数据整理、论文写作、可视化展示"
                   ]} />
                 </div>
-                <div className={styles.ellipse87} />
               </div>
             </div>
             <img src={blueBirdText} className={styles.blueBirdLabel} alt="Blue bird" />
@@ -281,7 +352,20 @@ const HomePage = () => {
           </div>
         </div>
         
-        <img src={shuIcon} className={styles.shu} alt="Decorative birds" />
+        {/* English text under star */}
+        {showEnglishText && (
+          <p className={styles.englishText}>Be the design stars with our wings.</p>
+        )}
+        
+        <img 
+          src={isStarClicked ? star2Icon : starIcon} 
+          className={`${styles.star} ${isStarBlinking ? styles.blinking : ''}`} 
+          alt="Star" 
+          onClick={handleStarClick}
+          style={{ cursor: 'pointer' }}
+        />
+        <img src={birdgroupImages[currentBirdgroup]} className={styles.birdgroup} alt="Bird group" style={{ opacity }} />
+        <div className={styles.ellipse89} />
       </div>
 
       <Transition />
