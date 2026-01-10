@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './index.module.scss';
 // Images
 import certificateImg from '../../assets/images/mjoa0s5w-1o9ncd7.png'; 
@@ -13,6 +14,7 @@ import cert4Img from '../../assets/images/mjoikapa-68dhbnz.png';
 import dec4Img from '../../assets/images/mjoikap4-eohjwb6.png';
 import cert5Img from '../../assets/images/mjoij3pp-o0012nv.png';
 import cert6Img from '../../assets/images/mjoij3pp-n1nzj0y.png';
+import cert7Img from '../../assets/images/mk8k9t0b-abko513.png'; // IODA国际原创设计奖国赛银奖奖状
 import commonDecImg from '../../assets/images/mjoij3p9-hm6ak31.png'; // Used for g5, g6
 
 const DotsGrid = () => (
@@ -74,6 +76,7 @@ const Card = ({
 };
 
 const Competition = () => {
+  const navigate = useNavigate();
   const shipRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -106,6 +109,8 @@ const Competition = () => {
       navigate('/detail1');
     } else if (['g2', 'g5'].includes(id)) {
       navigate('/detail2');
+    } else if (['g6', 'g7'].includes(id)) {
+      navigate('/detail3');
     }
   };
 
@@ -174,7 +179,18 @@ const Competition = () => {
           certImg: cert6Img,
           decImg: commonDecImg,
           decClass: styles.decCommon,
-          onClick: () => {} // No specific action for g6 yet
+          onClick: () => handleDetailClick('g6')
+      },
+      {
+          id: 'g7',
+          role: "队长   视觉传达设计",
+          title: "IODA国际原创设计奖",
+          award: "国赛银奖",
+          desc: "IODA国际原创设计奖——驱动设计创新的全球化权威平台，由国际青年设计师联合体（IYDC）携手中欧国际设计文化协会（CEIDA）、中韩创意设计协会（CKIDA）、中国本土品牌研究所、新青年设计师联盟等国内外设计组织联合战略孵化。",
+          certImg: cert7Img,
+          decImg: commonDecImg,
+          decClass: styles.decCommon,
+          onClick: () => handleDetailClick('g7')
       }
   ];
 

@@ -249,8 +249,9 @@
     flex-direction: column;
     align-items: flex-start;
     align-self: stretch;
-    margin-top: 140px;
+    margin-top: 0px;
     margin-left: 0; /* Adjusted from negative margin */
+    padding-top: 100px;
     padding-left: 65px;
     padding-bottom: 150px; /* Reduced padding from 300px */
     flex: 1;
@@ -270,7 +271,7 @@
 
     .contentContainer {
       position: relative;
-      margin-top: 104px; /* Reverted to original vertical position */
+      margin-top: 54px; /* Reduced margin-top to move content up */
       width: 100%;
       display: flex;
       justify-content: flex-start;
@@ -327,7 +328,7 @@
           display: flex;
           gap: 60px;
           margin-left: 200px; /* Shifted slightly right (was 50px) */
-          margin-top: -170px; /* Shifted further up (was -150px) */
+          margin-top: -105px; /* Increased upward shift slightly to move content up a little */
           z-index: 10;
       }
 

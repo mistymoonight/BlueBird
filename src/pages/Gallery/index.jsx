@@ -4,6 +4,8 @@ import styles from './index.module.scss';
 import vector2Img from '../../assets/images/mjovp33u-e4ked1h.svg';
 import vectorImg from '../../assets/images/birdd.svg';
 import footerBirdImg from '../../assets/images/footer_bird.png';
+import blueBirdImg from '../../assets/images/mk8p71xu-bacwfbs.png';
+import contactBg from '../../assets/images/mk8p75iw-nqdtxtt.svg';
 import blueBirdText from '../../assets/images/Blue_bird.png';
 import sDesignText from '../../assets/images/s_Design.png';
 
@@ -68,8 +70,28 @@ const Card = ({ title, details, index, isVisible, image, tags, onClickDetails })
 const Gallery = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [dots, setDots] = useState(0); // State for animated dots
+  const [isBlueBird, setIsBlueBird] = useState(false); // State for bird transformation
+  const [showContact, setShowContact] = useState(false); // State for contact dialog
   const sectionRef = useRef(null);
   const navigate = useNavigate();
+  const birdTimerRef = useRef(null); // Ref for timer
+
+  // Handle bird click
+  const handleBirdClick = () => {
+    setIsBlueBird(true);
+    setShowContact(true);
+    
+    // Clear any existing timer
+    if (birdTimerRef.current) {
+      clearTimeout(birdTimerRef.current);
+    }
+    
+    // Set timer to restore original bird after 3 seconds
+    birdTimerRef.current = setTimeout(() => {
+      setIsBlueBird(false);
+      setShowContact(false);
+    }, 3000);
+  };
 
   // Animated dots effect
   useEffect(() => {
@@ -136,6 +158,10 @@ const Gallery = () => {
       navigate('/detail1');
     } else if (index === 1) {
       navigate('/detail2');
+    } else if (index === 2) {
+      navigate('/detail3');
+    } else if (index === 3) {
+      navigate('/detail4');
     }
   };
 
@@ -170,9 +196,32 @@ const Gallery = () => {
 
       <div className={styles.bottomGradient} />
       <div className={styles.footer}>
-        <img src={footerBirdImg} className={styles.footerBird} alt="footer bird" />
+        <img 
+          src={isBlueBird ? blueBirdImg : footerBirdImg} 
+          className={styles.footerBird} 
+          alt="footer bird" 
+          onClick={handleBirdClick}
+          style={{ 
+            cursor: 'pointer',
+            transform: isBlueBird ? 'scale(1.2)' : 'scale(1)',
+            transition: 'transform 0.3s ease'
+          }}
+        />
         <p className={styles.footerText}>不断探索中{'·'.repeat(dots)}</p>
       </div>
+      
+      {/* Contact Dialog */}
+      {showContact && (
+        <div className={styles.contactDialog}>
+          <div className={styles.contactContent}>
+            <div className={styles.contactText}>
+              <p className={styles.contactTitle}>Contact me?</p>
+              <p className={styles.contactInstruction}>Please send an email to</p>
+              <p className={styles.contactEmail}>bluebirdd@qq.com</p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

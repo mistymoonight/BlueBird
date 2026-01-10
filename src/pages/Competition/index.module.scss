@@ -245,19 +245,18 @@
         top: 250px;
         left: 81px;
         width: 372px;
-        height: 60px;
         line-height: 20px;
         letter-spacing: 0.24px;
         color: #ffffff;
         font-family: "Alimama FangYuanTi VF", sans-serif;
         font-size: 12px;
         z-index: 5;
-        
-        /* Truncate if too long */
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
+        /* Allow text to wrap and display fully */
+        white-space: normal;
+        overflow: visible;
+        height: auto;
+        display: block;
+        margin: 0;
       }
       
       .verticalLine {

@@ -236,6 +236,7 @@
       height: 164px;
       margin-bottom: 50px; /* Space between bird and text */
       object-fit: contain;
+      /* Transform is handled in JSX for bird2 state */
     }
 
     .footerText {
@@ -263,5 +264,59 @@
     );
     pointer-events: none; 
     z-index: 0; 
+  }
+  
+  /* Contact Dialog Styles */
+  .contactDialog {
+    position: absolute;
+    bottom: 350px; /* Move up */
+    left: calc(50% + 110px); /* Move right */
+    z-index: 1000;
+  }
+  
+  .contactContent {
+    width: 300px;
+    height: 150px;
+    background-image: url(../../assets/images/mk8p75iw-nqdtxtt.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 25px 35px 35px 45px;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .contactText {
+    width: 220px;
+  }
+  
+  .contactTitle {
+    font-family: "Alimama FangYuanTi VF", "PingFang SC", sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.48px;
+    color: #000000;
+    margin: 0 0 8px 0;
+    font-weight: bold;
+  }
+  
+  .contactInstruction {
+    font-family: "Alimama FangYuanTi VF", "PingFang SC", sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.36px;
+    color: #000000;
+    margin: 0;
+  }
+  
+  .contactEmail {
+    font-family: "Alimama FangYuanTi VF", "PingFang SC", sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 0.36px;
+    color: #57c5e2;
+    margin: 0;
+    text-decoration: underline;
+    display: inline;
   }
 }

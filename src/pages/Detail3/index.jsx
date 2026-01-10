@@ -7,22 +7,25 @@ import linkIcon from '../../assets/images/detail1_link_icon.svg';
 import qrCode from '../../assets/images/detail1_qr_code.png';
 import leftArrow from '../../assets/images/detail1_left_arrow.png';
 import leftArrowActive from '../../assets/images/detail1_right_arrow.svg'; // Reuse right arrow SVG for active state
-import poster from '../../assets/images/detail1_poster.png';
-import posterH2 from '../../assets/images/detail1_poster_h2.png';
-import posterH3 from '../../assets/images/detail1_poster_h3.png';
-import posterH4 from '../../assets/images/detail1_poster_h4.png';
-import posterH5 from '../../assets/images/detail1_poster_h5.png';
+// 导入新的界面展示图片
+import poster3h2 from '../../assets/images/mk8mnk5b-717xs8s.png';
+import poster3h3 from '../../assets/images/mk8mnk8e-mlhjeez.png';
+import poster3h4 from '../../assets/images/mk8mnoz1-blwgagl.png';
+import poster3h1 from '../../assets/images/mk8mnkd1-c1uh8y7.png';
+import poster3h5 from '../../assets/images/mk8mnpq0-slgerse.png';
 import rightArrow from '../../assets/images/detail1_right_arrow.svg';
 import littleBirdIcon from '../../assets/images/littlebird.svg';
+// 导入流程框架图片
+import processFrameImg from '../../assets/images/mk8mkk9n-4t3ib4s.png';
 // 直接导入视频文件，让Vite自动处理路径
-import demoVideo from '../../assets/videos/demo1.mp4';
+import demoVideo from '../../assets/videos/demo3.mp4';
 
-const Detail1 = () => {
+const Detail3 = () => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Image sequence: poster -> h2 -> h4 -> h5 -> h3
-  const images = [poster, posterH2, posterH4, posterH5, posterH3];
+  // Image sequence: 3h1 -> 3h2 -> 3h3 -> 3h4 -> 3h5
+  const images = [poster3h1, poster3h2, poster3h3, poster3h4, poster3h5];
 
   const handleBack = () => {
     navigate('/home', { state: { targetSection: 'gallery-section' } });
@@ -55,45 +58,35 @@ const Detail1 = () => {
           </svg>
           <p className={styles.back}>返回</p>
         </div>
-        <p className={styles.text3}>钟子期-移动古琴APP</p>
-        <div className={styles.link} onClick={() => window.open('https://www.figma.com/proto/OmmkJmkbYG3TWwws7ObYwE/%E9%92%9F%E5%AD%90%E6%9C%9Fapp?page-id=0%3A1&node-id=257-3364&p=f&viewport=-674%2C-2401%2C0.97&t=ET9kyjde2r36L6CA-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=257%3A3364', '_blank')} style={{cursor: 'pointer'}}>
-          <img src={linkIcon} className={styles.vector2} alt="link" />
-          <p className={styles.text4}>点击此处体验</p>
-        </div>
+        <p className={styles.text3}>Healink-康复训练动作ai指导网站</p>
       </div>
       <div className={styles.frame28531}>
         <div className={styles.rectangle401}>
           <p className={styles.text5}>ui设计</p>
         </div>
         <div className={styles.rectangle401}>
-          <p className={styles.text5}>视觉传达设计</p>
+          <p className={styles.text5}>软件开发</p>
         </div>
         <div className={styles.rectangle401}>
-          <p className={styles.text5}>移动应用创新赛一等奖</p>
-        </div>
-        <div className={styles.rectangle401}>
-          <p className={styles.text5}>NCDA国家三等奖</p>
-        </div>
-        <div className={styles.rectangle401}>
-          <p className={styles.text5}>NCDA省一等奖</p>
-        </div>
-        <div className={styles.rectangle401}>
-          <p className={styles.text5}>IODA国赛银奖</p>
+          <p className={styles.text5}>微调大模型</p>
         </div>
       </div>
       <div className={styles.autoWrapper3}>
         <p className={styles.text6}>设计说明：</p>
-        <p className={styles.text6}>手机端交互：</p>
       </div>
       <div className={styles.autoWrapper4}>
-        <p className={styles.text7}>
-          在传统文化复兴与数字技术发展的交汇点上，古琴艺术因传播载体单一、视觉体验滞后，难以触达年轻群体。本UI设计作品《钟子期》得名于“知音”典故，以“高山流水遇知音”为精神内核，致力于打造一款融合美育、疗愈与共创的古琴数字应用，回应传统文化如何以现代设计语言焕新表达的命题。
-          整体视觉以“青墨山水”为基底，采用统一矢量语言贯穿界面。从图标到功能按钮，皆以流畅线条勾勒古琴轮廓，结合琴徽符号与弦纹元素，主色调选取黛青、墨黑与月白，营造“虚、远、淡、静”的东方意境。
-          “曲意共生”的场景设计可随琴曲动态生成水墨空间，如弹《高山流水》，画面展现瀑布飞流与云雾缭绕；演奏《平沙落雁》，则显沙洲鸿影与落霞天光。用户还可定制亭台、山石等元素，生成专属琴境。
-          “我的古琴”模块支持琴体外观、材质与铭文定制，以分层交互形式实现个性化仪式感。演奏过程搭载矢量谱与动态指法演绎，降低学习门槛。
-          “名琴博物馆”融合矢量贴图与3D交互，实现珍琴细节可视化；“文化辞典”与“大师演奏回放”模块则将琴史、技法、传承知识转译为图文并茂、动静结合的沉浸式体验，助力知音精神在数字时代的延续与共鸣。
-        </p>
-        <img src={qrCode} className={styles.image68} alt="qr code" />
+        <div>
+          <p className={styles.text7}>
+            人口老龄化加剧与肌骨问题高发推动康复需求攀升，家庭康复成为重要补充，但传统指导存在理解难、个性化不足、缺乏即时校正等痛点。为此，基于多模态技术的智能康复指导系统应运而生，融合计算机视觉与专业康复知识，覆盖家庭康复、术后管理等场景，已完成核心流程设计，具备落地基础。
+            系统以“专业可落地、体验轻量化”为核心，构建从视频采集到可视化输出的完整闭环，适配居家用户、术后患者及康复师三类人群，支持居家碎片化训练视频上传与快速分析，助力康复师高效掌握用户居家训练情况。系统核心优势在于多模态技术驱动的精准分析与全链路自动化能力。通过整合视频动作识别与专业康复文本知识库，实现“看懂动作偏差、讲清纠正逻辑、生成个性化方案”的核心目标：首先通过开源视频分析模型提取用户动作姿态、角度、稳定性等关键特征，精准识别腰椎代偿、骨盆前倾等错误动作；再通过模型微调或检索增强生成（RAG）技术，结合康复指南、临床论文等专业知识，生成易懂、可执行的纠正建议；最终通过内容结构化模块与数字专家讲解模块，输出PPT结构化内容与数字人讲解视频，同步呈现动作对比图示、关键步骤标注等可视化信息，让用户直观理解偏差点与改进方向。
+          </p>
+          <div className={styles.sourceCodeWrapper}>
+            <p className={styles.text6}>网站源代码：</p>
+            <a href="https://github.com/mistymoonight/Healink.git" target="_blank" rel="noopener noreferrer" className={styles.sourceCodeLink}>
+              https://github.com/mistymoonight/Healink.git
+            </a>
+          </div>
+        </div>
       </div>
       <div className={styles.autoWrapper5}>
         <div className={styles.titleWrapper}>
@@ -111,9 +104,20 @@ const Detail1 = () => {
           Your browser does not support the video tag.
         </video>
       </div>
+      
+      {/* 新增开发逻辑部分 */}
+      <div className={styles.autoWrapperSmallCard}>
+        <div className={styles.titleWrapper}>
+          <p className={styles.text8}>开发逻辑：</p>
+        </div>
+        <div className={styles.imageWrapper}>
+          <img src={processFrameImg} className={styles.smallCard} alt="流程框架 1" />
+        </div>
+      </div>
+      
       <div className={styles.autoWrapper8}>
         <div className={styles.autoWrapper6}>
-          <p className={styles.text8}>海报展示：</p>
+          <p className={styles.text8}>界面展示：</p>
         </div>
         {currentImageIndex === 0 ? (
           <img 
@@ -151,11 +155,11 @@ const Detail1 = () => {
       <div className={styles.autoWrapper9}>
         <p className={styles.text6}>作者：</p>
         <p className={styles.text9}>
-          王昱心 浙江大学；李沛璇 浙江大学；涂清清 浙江大学
+          王昱心 浙江大学；胡依琳 浙江大学；邓焱 浙江大学；杨鑫宇 浙江大学
         </p>
       </div>
     </motion.div>
   );
 };
 
-export default Detail1;
+export default Detail3;

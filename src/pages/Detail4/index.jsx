@@ -7,6 +7,7 @@ import linkIcon from '../../assets/images/detail1_link_icon.svg';
 import qrCode from '../../assets/images/detail1_qr_code.png';
 import leftArrow from '../../assets/images/detail1_left_arrow.png';
 import leftArrowActive from '../../assets/images/detail1_right_arrow.svg'; // Reuse right arrow SVG for active state
+// 导入四时有茶相关图片
 import poster from '../../assets/images/detail1_poster.png';
 import posterH2 from '../../assets/images/detail1_poster_h2.png';
 import posterH3 from '../../assets/images/detail1_poster_h3.png';
@@ -17,7 +18,7 @@ import littleBirdIcon from '../../assets/images/littlebird.svg';
 // 直接导入视频文件，让Vite自动处理路径
 import demoVideo from '../../assets/videos/demo1.mp4';
 
-const Detail1 = () => {
+const Detail4 = () => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -55,7 +56,7 @@ const Detail1 = () => {
           </svg>
           <p className={styles.back}>返回</p>
         </div>
-        <p className={styles.text3}>钟子期-移动古琴APP</p>
+        <p className={styles.text3}>四时有茶-逆水寒主题奶茶店</p>
         <div className={styles.link} onClick={() => window.open('https://www.figma.com/proto/OmmkJmkbYG3TWwws7ObYwE/%E9%92%9F%E5%AD%90%E6%9C%9Fapp?page-id=0%3A1&node-id=257-3364&p=f&viewport=-674%2C-2401%2C0.97&t=ET9kyjde2r36L6CA-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=257%3A3364', '_blank')} style={{cursor: 'pointer'}}>
           <img src={linkIcon} className={styles.vector2} alt="link" />
           <p className={styles.text4}>点击此处体验</p>
@@ -66,19 +67,13 @@ const Detail1 = () => {
           <p className={styles.text5}>ui设计</p>
         </div>
         <div className={styles.rectangle401}>
+          <p className={styles.text5}>周边设计</p>
+        </div>
+        <div className={styles.rectangle401}>
           <p className={styles.text5}>视觉传达设计</p>
         </div>
         <div className={styles.rectangle401}>
-          <p className={styles.text5}>移动应用创新赛一等奖</p>
-        </div>
-        <div className={styles.rectangle401}>
-          <p className={styles.text5}>NCDA国家三等奖</p>
-        </div>
-        <div className={styles.rectangle401}>
-          <p className={styles.text5}>NCDA省一等奖</p>
-        </div>
-        <div className={styles.rectangle401}>
-          <p className={styles.text5}>IODA国赛银奖</p>
+          <p className={styles.text5}>服务设计</p>
         </div>
       </div>
       <div className={styles.autoWrapper3}>
@@ -87,11 +82,11 @@ const Detail1 = () => {
       </div>
       <div className={styles.autoWrapper4}>
         <p className={styles.text7}>
-          在传统文化复兴与数字技术发展的交汇点上，古琴艺术因传播载体单一、视觉体验滞后，难以触达年轻群体。本UI设计作品《钟子期》得名于“知音”典故，以“高山流水遇知音”为精神内核，致力于打造一款融合美育、疗愈与共创的古琴数字应用，回应传统文化如何以现代设计语言焕新表达的命题。
-          整体视觉以“青墨山水”为基底，采用统一矢量语言贯穿界面。从图标到功能按钮，皆以流畅线条勾勒古琴轮廓，结合琴徽符号与弦纹元素，主色调选取黛青、墨黑与月白，营造“虚、远、淡、静”的东方意境。
-          “曲意共生”的场景设计可随琴曲动态生成水墨空间，如弹《高山流水》，画面展现瀑布飞流与云雾缭绕；演奏《平沙落雁》，则显沙洲鸿影与落霞天光。用户还可定制亭台、山石等元素，生成专属琴境。
-          “我的古琴”模块支持琴体外观、材质与铭文定制，以分层交互形式实现个性化仪式感。演奏过程搭载矢量谱与动态指法演绎，降低学习门槛。
-          “名琴博物馆”融合矢量贴图与3D交互，实现珍琴细节可视化；“文化辞典”与“大师演奏回放”模块则将琴史、技法、传承知识转译为图文并茂、动静结合的沉浸式体验，助力知音精神在数字时代的延续与共鸣。
+          四时有茶是一家以逆水寒游戏为主题的奶茶店，融合了游戏元素与传统茶文化，打造沉浸式消费体验。
+          整体视觉设计采用逆水寒游戏的中国风美学，结合四季主题，创造出春、夏、秋、冬四个系列的产品和空间设计。
+          UI设计包括移动端点单系统、会员积分体系和主题活动页面，通过游戏化的交互方式增强用户粘性。
+          周边设计涵盖了杯套、包装、徽章等产品，每一款都融入了游戏角色和场景元素。
+          服务设计注重用户体验，从线上预约到线下消费，打造完整的品牌体验闭环。
         </p>
         <img src={qrCode} className={styles.image68} alt="qr code" />
       </div>
@@ -158,4 +153,4 @@ const Detail1 = () => {
   );
 };
 
-export default Detail1;
+export default Detail4;

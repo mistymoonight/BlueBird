@@ -7,4 +7,11 @@ export default defineConfig({
   // TODO: Replace 'YOUR_REPO_NAME' with your actual GitHub repository name
   // Example: if your repo is 'my-portfolio', set base to '/my-portfolio/'
   base: '/BlueBird/',
+  // 确保public目录下的资源可以正确访问
+  resolve: {
+    alias: {
+      // 配置别名，确保public目录下的资源可以正确访问
+      '/videos': '/videos'
+    }
+  }
 })

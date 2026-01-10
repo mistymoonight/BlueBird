@@ -5,6 +5,8 @@ import StartPage from './pages/StartPage';
 import HomePage from './pages/HomePage';
 import Detail1 from './pages/Detail1';
 import Detail2 from './pages/Detail2';
+import Detail3 from './pages/Detail3';
+import Detail4 from './pages/Detail4';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -16,6 +18,8 @@ const AnimatedRoutes = () => {
         <Route path="/home" element={<HomePage />} />
         <Route path="/detail1" element={<Detail1 />} />
         <Route path="/detail2" element={<Detail2 />} />
+        <Route path="/detail3" element={<Detail3 />} />
+        <Route path="/detail4" element={<Detail4 />} />
       </Routes>
     </AnimatePresence>
   );
