@@ -3,6 +3,8 @@ import styles from './index.module.scss';
 import birdVector from '../../assets/images/mjos80jw-v54uf3y.svg';
 import decorateVector from '../../assets/images/mjomy9ov-0wyd26s.svg';
 import Gallery from '../Gallery';
+import AnimatedText from '../../components/AnimatedText';
+
 
 const DotsGrid = ({ rows = 6, cols = 8 }) => (
     <div className={styles.dotsGrid}>
@@ -85,7 +87,9 @@ const Experience = () => {
     <div className={styles.experience}>
       <div className={styles.autoWrapper4}>
 
-        <p className={styles.mainTitle}>个人经历</p>
+        <p className={styles.mainTitle}>
+          <AnimatedText text="个人经历" className="" />
+        </p>
         
         <div className={styles.contentContainer}>
             {/* Left Decorative Circles */}
@@ -106,7 +110,9 @@ const Experience = () => {
                     {/* STUDY Section */}
                     <div className={styles.sectionBlock}>
                         <div className={styles.headerGroup}>
-                            <h2 className={styles.sectionTitle}>Study</h2>
+                            <h2 className={styles.sectionTitle}>
+                                <AnimatedText text="Study" className="" delay={300} />
+                            </h2>
                             <DotsGrid />
                         </div>
                         
@@ -136,7 +142,9 @@ const Experience = () => {
                     {/* RESEARCH Section */}
                     <div className={styles.sectionBlock}>
                         <div className={styles.headerGroup}>
-                            <h2 className={styles.sectionTitle}>Research</h2>
+                            <h2 className={styles.sectionTitle}>
+                                <AnimatedText text="Research" className="" delay={300} />
+                            </h2>
                             <DotsGrid />
                         </div>
 
@@ -182,7 +190,9 @@ const Experience = () => {
                 <div className={styles.rightColumn}>
                     <div className={styles.sectionBlock}>
                         <div className={styles.headerGroup}>
-                            <h2 className={styles.sectionTitle}>Work</h2>
+                            <h2 className={styles.sectionTitle}>
+                                <AnimatedText text="Work" className="" delay={300} />
+                            </h2>
                             <DotsGrid rows={10} cols={8} />
                         </div>
 

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './index.module.scss';
+import AnimatedText from '../../components/AnimatedText';
+
 import vector2Img from '../../assets/images/mjovp33u-e4ked1h.svg';
 import vectorImg from '../../assets/images/birdd.svg';
 import footerBirdImg from '../../assets/images/footer_bird.png';
@@ -172,7 +174,9 @@ const Gallery = () => {
           <div className={styles.titleWrapper}>
             <img src={blueBirdText} className={styles.outlineText} alt="Blue bird" />
             <div className={styles.centerTitleGroup}>
-              <p className={styles.centerTitle}>设计画廊</p>
+              <p className={styles.centerTitle}>
+                <AnimatedText text="设计画廊" className="" />
+              </p>
               <img src={vectorImg} className={styles.birdIcon} alt="bird" />
             </div>
           </div>

@@ -20,16 +20,16 @@
     .grid {
       display: flex;
       flex-direction: column;
-      gap: 8px; /* Vertical gap between dots */
+      gap: 25px; /* Match Experience page vertical gap */
       
       .row {
          display: flex;
-         gap: 8px; /* Horizontal gap between dots */
+         gap: 25px; /* Match Experience page horizontal gap */
       }
       
       .dot {
-        width: 4px;
-        height: 4px;
+        width: 3px; /* Match Experience page dot size */
+        height: 3px;
         border-radius: 50%;
         background-color: #ffffff;
         opacity: 0.6;
@@ -146,8 +146,7 @@
         height: 3px;
         border-radius: 50%;
         background-color: #ffffff;
-        opacity: 0.8; /* Match Experience page opacity */
-        filter: blur(0.5px); /* Match Experience page blur effect */
+        opacity: 0.6;
       }
     }
 }

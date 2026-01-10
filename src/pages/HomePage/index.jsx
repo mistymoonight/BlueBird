@@ -13,6 +13,8 @@ import birdgroup3Icon from '../../assets/images/birdgroup3.svg';
 import birdgroup4Icon from '../../assets/images/birdgroup4.svg';
 import birdgroup5Icon from '../../assets/images/birdgroup5.svg';
 import birdgroup6Icon from '../../assets/images/birdgroup6.svg';
+import AnimatedText from '../../components/AnimatedText';
+
 import Transition from '../Transition';
 import Competition from '../Competition';
 import Experience from '../Experience';
@@ -314,14 +316,17 @@ const HomePage = () => {
         </div>
         
         <p className={styles.hiIAm}>
-          <span>Hi</span>
-          <span className={styles.exclamation}>!</span>
-          <span>  I am</span>
+          <AnimatedText text="Hi" className="" />
+          <AnimatedText text="!" className={styles.exclamation} delay={100} />
+          <AnimatedText text="  I am" className="" delay={200} />
         </p>
-        <p className={styles.a2}>Wang Yuxin</p>
+        <p className={styles.a2}>
+          <AnimatedText text="Wang Yuxin" className="" delay={500} />
+        </p>
         <p className={styles.a3}>
-          I am from Zhejiang University, enrolled in the Industrial Design <br />
-          program under the School of Computer Science and Technology.
+          <AnimatedText text="I am from Zhejiang University, enrolled in the Industrial Design " className="" delay={800} />
+          <br />
+          <AnimatedText text="program under the School of Computer Science and Technology." className="" delay={1500} />
         </p>
         
         <div className={styles.autoWrapper7}>

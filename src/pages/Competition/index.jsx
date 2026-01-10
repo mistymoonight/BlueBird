@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './index.module.scss';
+import AnimatedText from '../../components/AnimatedText';
+
 // Images
 import certificateImg from '../../assets/images/mjoa0s5w-1o9ncd7.png'; 
 import decImg from '../../assets/images/mjohor6z-1mcg288.png';
@@ -216,7 +218,9 @@ const Competition = () => {
 
   return (
     <div className={styles.competition}>
-      <p className={styles.text3}>竞赛获奖</p>
+      <p className={styles.text3}>
+        <AnimatedText text="竞赛获奖" className="" />
+      </p>
       <div className={styles.autoWrapper6}>
         <div className={styles.group2957} onClick={handleSlideClick}>
           <img src={arrowIcon} className={styles.vector} alt="arrow" />
