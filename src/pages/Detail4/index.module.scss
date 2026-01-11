@@ -321,21 +321,30 @@
     justify-content: center;
     align-items: center;
     align-self: stretch;
-    margin-top: 70px;
+    margin-top: 30px; /* Reduced margin-top from 70px to 30px */
     position: relative;
 
     .titleWrapper {
       position: absolute;
       left: 61px;
-      top: 0;
+      top: -20px; /* Move title up by 20px */
     }
 
     .rectangle404 {
-      margin-top: 60px;
+      margin-top: 40px; /* Reduced margin-top from 60px to 40px */
       background: #d9d9d9;
       width: 726px;
       height: 436px;
     }
+  }
+
+  /* Space layout styles */
+  .layoutImage {
+    max-width: 800px; /* Reduce image size */
+    height: auto;
+    border-radius: 8px;
+    margin: 10px auto;
+    display: block;
   }
 
   .autoWrapper8 {
@@ -343,7 +352,7 @@
     align-items: center;
     justify-content: center;
     align-self: stretch;
-    margin-top: 50px;
+    margin-top: 30px; /* Reduced margin-top from 50px to 30px */
     padding-top: 0;
     position: relative;
 
@@ -354,7 +363,7 @@
       align-self: stretch;
       position: absolute;
       left: 58px;
-      top: 0;
+      top: -10px; /* Move title up by 10px */
 
       .text8 {
         margin: 0px 0px 0px 4px;
@@ -372,7 +381,7 @@
       height: 75px;
       rotate: -180deg;
       margin-right: 360px;
-      margin-bottom: 100px;
+      margin-bottom: 50px; /* Reduced margin-bottom from 100px to 50px */
       cursor: pointer;
     }
 
@@ -385,14 +394,16 @@
         font-family: "Alimama FangYuanTi VF", "PingFang SC", sans-serif;
         font-size: 18px;
         color: #000000;
-        margin-top: 35px;
+        margin-top: 50px; /* Increased margin-top from 20px to 30px to move down */
         font-weight: bold;
       }
 
       .h1 {
-        width: 500px;
-        height: auto;
+        width: 500px; /* Fixed width for all posters */
+        height: 650px; /* Fixed height for all posters */
+        object-fit: contain;
         border-radius: 8px; /* Optional styling */
+        margin-top: 30px; /* Add margin-top to move poster down */
       }
     }
 
@@ -400,7 +411,7 @@
       width: 44px;
       height: 75px;
       margin-left: 360px;
-      margin-bottom: 100px;
+      margin-bottom: 50px; /* Reduced margin-bottom from 100px to 50px */
       cursor: pointer;
     }
   }
